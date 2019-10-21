@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="guide_text" format="string" />
+    <attr name="guide_textSize" format="dimension" />
+    <attr name="guide_textColor" format="color" />
+    <attr name="guide_progress" format="float" />
+    <attr name="guide_progressColor" format="color" />
+    <attr name="guide_progressTextColor" format="color" />
+
+    <declare-styleable name="ProgressTextView_Bad">
+        <attr name="guide_progress" />
+        <attr name="guide_progressColor" />
+        <attr name="guide_progressTextColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressTextView_Medium">
+        <attr name="guide_text" />
+        <attr name="guide_textSize" />
+        <attr name="guide_textColor" />
+        <attr name="guide_progress" />
+        <attr name="guide_progressColor" />
+        <attr name="guide_progressTextColor" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressTextView_Good">
+        <attr name="guide_text" />
+        <attr name="guide_textSize" />
+        <attr name="guide_textColor" />
+        <attr name="guide_progress" />
+        <attr name="guide_progressColor" />
+        <attr name="guide_progressTextColor" />
+    </declare-styleable>
+</resources>
