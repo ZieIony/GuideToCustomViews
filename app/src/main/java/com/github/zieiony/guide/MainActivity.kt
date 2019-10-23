@@ -10,6 +10,7 @@ import carbon.component.PaddingItem
 import carbon.component.PaddingRow
 import carbon.recycler.RowArrayAdapter
 import carbon.recycler.RowFactory
+import carbon.widget.Toolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
 
@@ -51,7 +52,19 @@ class MainActivity : AppCompatActivity() {
         adapter.items = arrayOf(
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf)),
             SampleItem(ProgressTextViewActivity::class.java),
+            SampleItem(GraphViewActivity::class.java),
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf))
         )
+    }
+}
+
+abstract class SampleActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        javaClass.getAnnotation(ActivityAnnotation::class.java)?.let {
+            setContentView(it.layout)
+            findViewById<Toolbar>(R.id.toolbar)?.title = it.title
+        }
     }
 }

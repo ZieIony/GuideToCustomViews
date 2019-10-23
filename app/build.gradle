@@ -28,7 +28,9 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0-beta01'
 
+    implementation 'com.github.ZieIony:randomdata:4e90951628'
     implementation 'com.github.ZieIony:carbon:e2aadf6002'
 
     implementation project(path: ':progresstextview')
+    implementation project(path: ':graphview')
 }
