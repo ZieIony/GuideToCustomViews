@@ -12,6 +12,7 @@ import com.github.zieiony.guide.progresstextview.ProgressTextView_Bad;
 import com.github.zieiony.guide.progresstextview.ProgressTextView_Good;
 import com.github.zieiony.guide.progresstextview.ProgressTextView_Medium;
 
+@ActivityAnnotation(title = "ProgressTextView")
 public class ProgressTextViewActivity extends AppCompatActivity {
 
     @SuppressLint("ClickableViewAccessibility")
