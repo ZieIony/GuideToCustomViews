@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="guide_itemColor" format="color" />
+    <attr name="guide_itemSpacing" format="dimension" />
+
+    <declare-styleable name="GraphView2">
+        <attr name="guide_itemColor" />
+        <attr name="guide_itemSpacing" />
+    </declare-styleable>
+</resources>

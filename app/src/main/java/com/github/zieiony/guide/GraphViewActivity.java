@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 
 import com.github.zieiony.guide.graphview.GraphView;
+import com.github.zieiony.guide.graphview.GraphView2;
 
 import tk.zielony.randomdata.RandomData;
 import tk.zielony.randomdata.common.FloatGenerator;
@@ -28,5 +29,10 @@ public class GraphViewActivity extends SampleActivity {
         final GraphView graphView1 = findViewById(R.id.graphView1);
         graphView1.setItems(items);
         graphView1.setItemSpacing(4);
+
+        GraphView2.Item[] items2 = randomData.generateArray(GraphView2.Item.class, 10);
+
+        final GraphView2 graphView2 = findViewById(R.id.graphView2);
+        graphView2.setItems(items2);
     }
 }
