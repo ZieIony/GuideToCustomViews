@@ -20,5 +20,6 @@
 
         <activity android:name=".ProgressTextViewActivity" />
         <activity android:name=".GraphViewActivity" />
+        <activity android:name=".FlowLayoutActivity" />
     </application>
 </manifest>

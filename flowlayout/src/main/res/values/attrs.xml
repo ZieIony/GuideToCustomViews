@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="guide_flowLayoutStyle" format="reference" />
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout2">
+        <attr name="android:gravity" />
+    </declare-styleable>
+
+</resources>

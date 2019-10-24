@@ -1,2 +1,2 @@
-include ':app', ':progresstextview', ':graphview'
+include ':app', ':progresstextview', ':graphview', ':flowlayout'
 rootProject.name='Guide'
