@@ -10,4 +10,12 @@
         <attr name="android:gravity" />
     </declare-styleable>
 
+    <declare-styleable name="FlowLayout3">
+        <attr name="android:gravity" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout3_Layout">
+        <attr name="guide_layout_fill" format="boolean" />
+    </declare-styleable>
+
 </resources>

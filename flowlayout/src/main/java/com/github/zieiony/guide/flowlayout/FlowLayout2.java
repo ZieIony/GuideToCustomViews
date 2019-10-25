@@ -271,7 +271,6 @@ public class FlowLayout2 extends android.widget.FrameLayout {
 
         public LayoutParams(android.widget.FrameLayout.LayoutParams source) {
             super((MarginLayoutParams) source);
-            gravity = source.gravity;
         }
 
         public LayoutParams(LayoutParams source) {
