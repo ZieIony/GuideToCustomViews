@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.zieiony.guide.invalidedittext.InvalidEditText
+        android:id="@+id/invalidEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="at least 6 characters"
+        android:textColor="@color/text_color_selector"
+        app:backgroundTint="@color/color_accent_selector">
+
+        <requestFocus />
+    </com.github.zieiony.guide.invalidedittext.InvalidEditText>
+</LinearLayout>

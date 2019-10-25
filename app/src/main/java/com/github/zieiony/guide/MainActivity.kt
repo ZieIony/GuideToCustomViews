@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             SampleItem(ProgressTextViewActivity::class.java),
             SampleItem(GraphViewActivity::class.java),
             SampleItem(FlowLayoutActivity::class.java),
+            SampleItem(InvalidEditTextActivity::class.java),
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf))
         )
     }

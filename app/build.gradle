@@ -34,4 +34,5 @@ dependencies {
     implementation project(path: ':progresstextview')
     implementation project(path: ':graphview')
     implementation project(path: ':flowlayout')
+    implementation project(path: ':invalidedittext')
 }
