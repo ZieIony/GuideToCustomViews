@@ -10,9 +10,11 @@ I've been designing, writing and publishing Android custom views for the past 5 
 1. [Prefix everything](https://github.com/ZieIony/GuideToCustomViews/wiki/Prefix-everything)
 1. [Constructors](https://github.com/ZieIony/GuideToCustomViews/wiki/Constructors)
 1. [Measuring](https://github.com/ZieIony/GuideToCustomViews/wiki/Measuring)
+1. [Custom states](https://github.com/ZieIony/GuideToCustomViews/wiki/Custom-states)
 
 ### Case studies
 
 1. [ProgressTextView](https://github.com/ZieIony/GuideToCustomViews/wiki/ProgressTextView). A progress bar that also has a text. The text should be drawn in one color on the 'done' part of the progress and in another color on the 'remaining' part. [Code](https://github.com/ZieIony/GuideToCustomViews/tree/master/progresstextview).
 1. GraphView. A simple bar graph with color state lists and bar selecting with clicks. Topics covered: drawing on canvas, state lists, touch events. [Code](https://github.com/ZieIony/GuideToCustomViews/tree/master/graphview).
 1. FlowLayout. A layout that displays its children in rows, side to side and then in another line. Topics covered: measuring, laying out. [Code](https://github.com/ZieIony/GuideToCustomViews/tree/master/flowlayout).
+1. [InvalidEditText](https://github.com/ZieIony/GuideToCustomViews/wiki/InvalidEditText). An EditText with support for an invalid state attribute. Topics covered: custom states. [Code](https://github.com/ZieIony/GuideToCustomViews/tree/master/invalidedittext).
