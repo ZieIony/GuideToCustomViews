@@ -3,11 +3,9 @@ The ultimate guide to Android custom views
 
 I've been designing, writing and publishing Android custom views for the past 5 years now. I guess it's about time to sum it up and share the results.
 
-Here you will find the topics related to custom views and a couple of case studies. Code samples will be in Java and Kotlin randomly and the code will be as simple as possible to demonstrate ideas and techniques better.
+Here you will find the topics related to custom views and a couple of case studies. Code samples will be in Java and Kotlin randomly and the code will be as simple as possible to demonstrate ideas and techniques better. I want this place to be more of a tutorial wiki than a documentation. You can find the documentation on [developer.android.com/](https://developer.android.com/).
 
-I'll try to add an article or two per week. If there's something missing and you think that I should write about - raise an issue and tell me.
-
-If you wish, there's a larger repository with my custom views [here](https://github.com/ZieIony/Carbon).
+I'll try to add an article or two per week. If there's something missing and you think that I should write about - raise an issue and tell me. If you wish, there's a larger repository with my custom views [here](https://github.com/ZieIony/Carbon).
 
 ### Topics
 
@@ -39,13 +37,19 @@ See: [guide](https://github.com/ZieIony/GuideToCustomViews/wiki/ProgressTextView
 
 ##### GraphView
 
-A simple bar graph with color state lists and bar selecting with clicks.
+<img src="https://github.com/ZieIony/GuideToCustomViews/blob/master/images/chartview.png" width="25%" height="25%"/>
+
+A simple bar chart with color state lists and bar selecting with clicks.
 
 Topics covered: drawing on canvas, state lists, touch events.
 
 See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/graphview).
 
+A more complete version of the view can be found [here](https://github.com/ZieIony/Carbon/blob/master/carbon/src/main/java/carbon/beta/ChartView.java)
+
 ##### FlowLayout
+
+<img src="https://github.com/ZieIony/GuideToCustomViews/blob/master/images/flowlayout.png" width="25%" height="25%"/>
 
 A layout that displays its children in rows, side to side and then in another line.
 
