@@ -245,8 +245,6 @@ public class FlowLayout2 extends android.widget.FrameLayout {
     }
 
     public static class LayoutParams extends android.widget.FrameLayout.LayoutParams {
-        private RuntimeException delayedException;
-
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
@@ -275,15 +273,6 @@ public class FlowLayout2 extends android.widget.FrameLayout {
 
         public LayoutParams(LayoutParams source) {
             super((MarginLayoutParams) source);
-        }
-
-        @Override
-        protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
-            try {
-                super.setBaseAttributes(a, widthAttr, heightAttr);
-            } catch (RuntimeException e) {
-                delayedException = e;
-            }
         }
     }
 }
