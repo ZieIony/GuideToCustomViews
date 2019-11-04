@@ -19,7 +19,7 @@
         </activity>
 
         <activity android:name=".ProgressTextViewActivity" />
-        <activity android:name=".GraphViewActivity" />
+        <activity android:name=".ChartViewActivity" />
         <activity android:name=".FlowLayoutActivity" />
         <activity android:name=".InvalidEditTextActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
     </application>

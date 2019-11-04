@@ -35,7 +35,7 @@ A progress bar that also has a text. The text should be drawn in one color on th
 
 See: [guide](https://github.com/ZieIony/GuideToCustomViews/wiki/ProgressTextView), [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/progresstextview).
 
-##### GraphView
+##### ChartView
 
 <img src="https://github.com/ZieIony/GuideToCustomViews/blob/master/images/chartview.png" width="25%" height="25%"/>
 
@@ -43,7 +43,7 @@ A simple bar chart with color state lists and bar selecting with clicks.
 
 Topics covered: drawing on canvas, state lists, touch events.
 
-See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/graphview).
+See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/chartview).
 
 A more complete version of the view can be found [here](https://github.com/ZieIony/Carbon/blob/master/carbon/src/main/java/carbon/beta/ChartView.java)
 
@@ -56,6 +56,8 @@ A layout that displays its children in rows, side to side and then in another li
 Topics covered: measuring, laying out, custom layout attributes, right to left support.
 
 See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/flowlayout).
+
+A more complete version of the view can be found [here](https://github.com/ZieIony/Carbon/blob/master/carbon/src/main/java/carbon/widget/FlowLayout.java)
 
 ##### InvalidEditText
 

@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.github.ZieIony:carbon:e2aadf6002'
 
     implementation project(path: ':progresstextview')
-    implementation project(path: ':graphview')
+    implementation project(path: ':chartview')
     implementation project(path: ':flowlayout')
     implementation project(path: ':invalidedittext')
 }

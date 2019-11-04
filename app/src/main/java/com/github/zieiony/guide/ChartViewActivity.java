@@ -5,15 +5,15 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import com.github.zieiony.guide.graphview.GraphView;
-import com.github.zieiony.guide.graphview.GraphView2;
+import com.github.zieiony.guide.chartview.ChartView;
+import com.github.zieiony.guide.chartview.ChartView2;
 
 import tk.zielony.randomdata.RandomData;
 import tk.zielony.randomdata.common.FloatGenerator;
 import tk.zielony.randomdata.food.StringFruitGenerator;
 
-@ActivityAnnotation(layout = R.layout.activity_graphview, title = "GraphView")
-public class GraphViewActivity extends SampleActivity {
+@ActivityAnnotation(layout = R.layout.activity_chartview, title = "ChartView")
+public class ChartViewActivity extends SampleActivity {
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -24,15 +24,15 @@ public class GraphViewActivity extends SampleActivity {
         randomData.addGenerator(new StringFruitGenerator());
         randomData.addGenerator(new FloatGenerator(0, 100).withMatcher(field -> field.getName().equals("value")));
 
-        GraphView.Item[] items = randomData.generateArray(GraphView.Item.class, 10);
+        ChartView.Item[] items = randomData.generateArray(ChartView.Item.class, 10);
 
-        final GraphView graphView1 = findViewById(R.id.graphView1);
+        final ChartView graphView1 = findViewById(R.id.chartView1);
         graphView1.setItems(items);
         graphView1.setItemSpacing(4);
 
-        GraphView2.Item[] items2 = randomData.generateArray(GraphView2.Item.class, 10);
+        ChartView2.Item[] items2 = randomData.generateArray(ChartView2.Item.class, 10);
 
-        final GraphView2 graphView2 = findViewById(R.id.graphView2);
-        graphView2.setItems(items2);
+        final ChartView2 chartView2 = findViewById(R.id.chartView2);
+        chartView2.setItems(items2);
     }
 }

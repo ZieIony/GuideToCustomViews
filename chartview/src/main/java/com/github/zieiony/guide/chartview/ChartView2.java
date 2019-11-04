@@ -1,4 +1,4 @@
-package com.github.zieiony.guide.graphview;
+package com.github.zieiony.guide.chartview;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -15,7 +15,7 @@ import androidx.annotation.RequiresApi;
 
 import java.util.Arrays;
 
-public class GraphView2 extends View {
+public class ChartView2 extends View {
     public static class Item {
         String name;
         float value;
@@ -51,35 +51,35 @@ public class GraphView2 extends View {
     private ColorStateList itemColor;
     private Item selectedItem;
 
-    public GraphView2(Context context) {
+    public ChartView2(Context context) {
         super(context);
-        initGraphView(null, 0);
+        initChartView(null, 0);
     }
 
-    public GraphView2(Context context, @Nullable AttributeSet attrs) {
+    public ChartView2(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        initGraphView(attrs, 0);
+        initChartView(attrs, 0);
     }
 
-    public GraphView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ChartView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initGraphView(attrs, defStyleAttr);
+        initChartView(attrs, defStyleAttr);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public GraphView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ChartView2(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        initGraphView(attrs, defStyleAttr);
+        initChartView(attrs, defStyleAttr);
     }
 
-    private void initGraphView(@Nullable AttributeSet attrs, int defStyleAttr) {
+    private void initChartView(@Nullable AttributeSet attrs, int defStyleAttr) {
         if (attrs == null)
             return;
 
-        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.GraphView2);
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ChartView2);
 
-        setItemSpacing(a.getDimension(R.styleable.GraphView2_guide_itemSpacing, 0));
-        setItemColor(a.getColorStateList(R.styleable.GraphView2_guide_itemColor));
+        setItemSpacing(a.getDimension(R.styleable.ChartView2_guide_itemSpacing, 0));
+        setItemColor(a.getColorStateList(R.styleable.ChartView2_guide_itemColor));
 
         a.recycle();
     }

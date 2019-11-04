@@ -10,16 +10,16 @@
         style="@style/carbon_Toolbar.ActionBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GraphView" />
+        android:text="ChartView" />
 
-    <com.github.zieiony.guide.graphview.GraphView
-        android:id="@+id/graphView1"
+    <com.github.zieiony.guide.chartview.ChartView
+        android:id="@+id/chartView1"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:padding="16dp" />
 
-    <com.github.zieiony.guide.graphview.GraphView2
-        android:id="@+id/graphView2"
+    <com.github.zieiony.guide.chartview.ChartView2
+        android:id="@+id/chartView2"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:padding="16dp"

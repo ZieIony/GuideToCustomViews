@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         adapter.items = arrayOf(
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf)),
             SampleItem(ProgressTextViewActivity::class.java),
-            SampleItem(GraphViewActivity::class.java),
+            SampleItem(ChartViewActivity::class.java),
             SampleItem(FlowLayoutActivity::class.java),
             SampleItem(InvalidEditTextActivity::class.java),
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf))

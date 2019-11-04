@@ -1,4 +1,4 @@
-package com.github.zieiony.guide.graphview;
+package com.github.zieiony.guide.chartview;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -13,7 +13,7 @@ import androidx.annotation.RequiresApi;
 
 import java.util.Arrays;
 
-public class GraphView extends View {
+public class ChartView extends View {
     public static class Item {
         String name;
         float value;
@@ -47,20 +47,20 @@ public class GraphView extends View {
     private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private float spacing = 0;
 
-    public GraphView(Context context) {
+    public ChartView(Context context) {
         super(context);
     }
 
-    public GraphView(Context context, @Nullable AttributeSet attrs) {
+    public ChartView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GraphView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ChartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public GraphView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ChartView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 

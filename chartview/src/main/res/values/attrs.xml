@@ -4,7 +4,7 @@
     <attr name="guide_itemColor" format="color" />
     <attr name="guide_itemSpacing" format="dimension" />
 
-    <declare-styleable name="GraphView2">
+    <declare-styleable name="ChartView2">
         <attr name="guide_itemColor" />
         <attr name="guide_itemSpacing" />
     </declare-styleable>
