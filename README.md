@@ -45,7 +45,7 @@ A simple bar chart with color state lists and bar selecting with clicks.
 
 Topics covered: drawing on canvas, state lists, touch events.
 
-See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/graphview).
+See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/chartview).
 
 A more complete version of the view can be found [here](https://github.com/ZieIony/Carbon/blob/master/carbon/src/main/java/carbon/beta/ChartView.java)
 
