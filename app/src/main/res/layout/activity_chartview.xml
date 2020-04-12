@@ -15,13 +15,23 @@
     <com.github.zieiony.guide.chartview.ChartView
         android:id="@+id/chartView1"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:padding="16dp" />
 
     <com.github.zieiony.guide.chartview.ChartView2
         android:id="@+id/chartView2"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
+        android:contentDescription="chart view 2"
+        android:padding="16dp"
+        app:guide_itemColor="@color/graph_itemcolor"
+        app:guide_itemSpacing="2dp" />
+
+    <com.github.zieiony.guide.chartview.ChartView3
+        android:id="@+id/chartView3"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:contentDescription="chart view 3"
         android:padding="16dp"
         app:guide_itemColor="@color/graph_itemcolor"
         app:guide_itemSpacing="2dp" />
