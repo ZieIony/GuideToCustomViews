@@ -20,6 +20,7 @@ I'll try to add an article or two per week. If there's something missing and you
 1. [Custom states](https://github.com/ZieIony/GuideToCustomViews/wiki/Custom-states)
 1. [State saving](https://github.com/ZieIony/GuideToCustomViews/wiki/State-saving)
 1. [Edit mode](https://github.com/ZieIony/GuideToCustomViews/wiki/Edit-mode)
+1. [Drawables](https://github.com/ZieIony/GuideToCustomViews/wiki/Drawables)
 
 ##### Attributes and styles
 
