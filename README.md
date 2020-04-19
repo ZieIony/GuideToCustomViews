@@ -91,4 +91,4 @@ An animated Drawable depicting a landscape with customizable items: trees, cloud
 
 Topics covered: drawing on Canvas, custom drawables.
 
-See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/landscapedrawable).
+See: [guide](https://github.com/ZieIony/GuideToCustomViews/wiki/LandscapeDrawable), [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/landscapedrawable).

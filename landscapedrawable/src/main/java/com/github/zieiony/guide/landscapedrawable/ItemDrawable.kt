@@ -19,12 +19,12 @@ class ItemDrawable(val item: LandscapeItem) : Drawable() {
     }
 
     override fun setAlpha(alpha: Int) {
+        // not supported
     }
 
-    override fun getOpacity(): Int {
-        return PixelFormat.TRANSLUCENT
-    }
+    override fun getOpacity() = PixelFormat.TRANSLUCENT
 
     override fun setColorFilter(colorFilter: ColorFilter?) {
+        // not supported
     }
 }

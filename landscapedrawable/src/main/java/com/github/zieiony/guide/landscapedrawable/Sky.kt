@@ -40,14 +40,14 @@ class Sky(
 
     override fun onDraw(canvas: Canvas) {
         val currentTime = System.currentTimeMillis()
+        val dt = (currentTime - time) / 1000f
         for (cloud in clouds) {
-            cloud.x += wind * (currentTime - time) / 1000f * cloud.z
+            cloud.x += wind * dt * cloud.z
             if (cloud.x > width)
                 cloud.x = -cloud.width
         }
         time = currentTime
 
-        paint.shader = null
         for (cloud in clouds)
             cloud.draw(canvas)
     }
