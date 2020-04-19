@@ -3,4 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="landscape_starColor">#ffffff</color>
+    <color name="landscape_sunColor">#ffffff</color>
+    <color name="landscape_fogColor">#e0f2f1</color>
+    <color name="landscape_cloudColor">#ffe0f2f1</color>
+    <color name="landscape_skyColor">#b2dfdb</color>
+    <color name="landscape_landscapeColor">#0d47a1</color>
 </resources>

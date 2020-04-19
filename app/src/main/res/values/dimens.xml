@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="landscape_cloudSize">100dp</dimen>
+    <dimen name="landscape_starSize">2dp</dimen>
+    <dimen name="landscape_sunSize">16dp</dimen>
+    <dimen name="landscape_landscapeHeight">112dp</dimen>
+    <dimen name="landscape_treeHeight">32dp</dimen>
+    <dimen name="landscape_skyHeight">112dp</dimen>
+    <dimen name="landscape_windStrength">1dp</dimen>
+    <dimen name="landscape_maxWind">12dp</dimen>
+</resources>

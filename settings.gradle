@@ -1,2 +1,3 @@
 include ':app', ':progresstextview', ':chartview', ':flowlayout', ':invalidedittext', ':moodtoggle'
 rootProject.name='Guide'
+include ':landscapedrawable'

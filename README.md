@@ -82,3 +82,13 @@ A very simple toggle with accessibility support.
 Topics covered: basic accessibility.
 
 See: [guide](https://github.com/ZieIony/GuideToCustomViews/wiki/MoodToggle), [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/moodtoggle).
+
+##### LandscapeDrawable
+
+<img src="https://github.com/ZieIony/GuideToCustomViews/blob/master/images/landscapedrawable.png" width="25%" height="25%"/>
+
+An animated Drawable depicting a landscape with customizable items: trees, clouds, stars, a sun, and fog.
+
+Topics covered: drawing on Canvas, custom drawables.
+
+See: [code](https://github.com/ZieIony/GuideToCustomViews/tree/master/landscapedrawable).

@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             SampleItem(FlowLayoutActivity::class.java),
             SampleItem(InvalidEditTextActivity::class.java),
             SampleItem(MoodToggleActivity::class.java),
+            SampleItem(LandscapeDrawableActivity::class.java),
             PaddingItem(resources.getDimensionPixelSize(R.dimen.carbon_paddingHalf))
         )
     }

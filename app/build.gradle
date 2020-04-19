@@ -38,4 +38,5 @@ dependencies {
     implementation project(path: ':flowlayout')
     implementation project(path: ':invalidedittext')
     implementation project(path: ':moodtoggle')
+    implementation project(path: ':landscapedrawable')
 }

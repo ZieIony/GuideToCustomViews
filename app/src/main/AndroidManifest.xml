@@ -23,6 +23,6 @@
         <activity android:name=".FlowLayoutActivity" />
         <activity android:name=".InvalidEditTextActivity" android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
         <activity android:name=".MoodToggleActivity" />
-        <activity android:name=".AccessibilityNodeProviderActivity" />
+        <activity android:name=".LandscapeDrawableActivity" />
     </application>
 </manifest>
