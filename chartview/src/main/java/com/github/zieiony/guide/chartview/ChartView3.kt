@@ -1,21 +1,20 @@
 package com.github.zieiony.guide.chartview
 
-import android.app.Service
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Rect
 import android.os.Build
+import android.os.Bundle
 import android.util.AttributeSet
+import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
-import android.view.accessibility.AccessibilityEvent
-import android.view.accessibility.AccessibilityManager
-import android.view.accessibility.AccessibilityNodeProvider
 import androidx.annotation.RequiresApi
-import androidx.core.view.accessibility.AccessibilityEventCompat
-import androidx.core.view.accessibility.AccessibilityNodeProviderCompat
-import androidx.core.view.accessibility.AccessibilityRecordCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.customview.widget.ExploreByTouchHelper
 import com.github.zieiony.guide.chartview.ChartView3
 import java.util.*
 import kotlin.math.floor
@@ -35,12 +34,68 @@ class ChartView3 : View {
 
     }
 
+    private inner class AccessHelper : ExploreByTouchHelper(this) {
+        override fun getVirtualViewAt(x: Float, y: Float): Int {
+            if (x < paddingLeft || y < paddingTop || x > width - paddingRight || y > height - paddingBottom)
+                return HOST_ID
+            items?.let { items ->
+                val viewportWidth = width - paddingLeft - paddingRight.toFloat()
+                val itemWidth = viewportWidth / items.size
+                return max(0, min(floor((x - paddingLeft) / itemWidth).toInt(), items.size - 1))
+            }
+            return HOST_ID
+        }
+
+        override fun getVisibleVirtualViews(virtualViewIds: MutableList<Int>) {
+            items?.let {
+                for (i in it.indices)
+                    virtualViewIds.add(i)
+            }
+        }
+
+        override fun onPopulateNodeForVirtualView(virtualViewId: Int, node: AccessibilityNodeInfoCompat) {
+            items?.let { items ->
+                node.className = accessibilityClassName
+                node.contentDescription = "item ${virtualViewId + 1} - ${items[virtualViewId].name}, ${items[virtualViewId].value}"
+                node.isClickable = true
+
+                val viewportWidth = width - paddingLeft - paddingRight.toFloat()
+                val viewportHeight = height - paddingTop - paddingBottom.toFloat()
+                val itemWidth = viewportWidth / items.size
+                var maxItemHeight = 0f
+
+                for (item in items)
+                    maxItemHeight = max(maxItemHeight, item.value)
+
+                val rect = Rect(
+                    (paddingLeft + virtualViewId * itemWidth + itemSpacing / 2).toInt(),
+                    (height - paddingBottom - viewportHeight / maxItemHeight * items[virtualViewId].value).toInt(),
+                    (paddingLeft + (virtualViewId + 1) * itemWidth - itemSpacing / 2).toInt(),
+                    (height - paddingBottom.toFloat()).toInt()
+                )
+
+                node.setBoundsInParent(rect)
+            }
+        }
+
+        override fun onPerformActionForVirtualView(virtualViewId: Int, action: Int, arguments: Bundle?): Boolean {
+            items?.let { items ->
+                if (virtualViewId >= 0 && virtualViewId < items.size)
+                    selectedItem = items[virtualViewId]
+                return true
+            }
+            return false
+        }
+    }
+
     var items: Array<Item>? = null
         private set
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     var itemSpacing = 0f
     var itemColor: ColorStateList? = null
     var selectedItem: Item? = null
+
+    private val accessHelper = AccessHelper()
 
     constructor(context: Context?) : super(context) {
         initChartView(null, 0)
@@ -70,8 +125,7 @@ class ChartView3 : View {
 
         a.recycle()
 
-        isClickable = true
-        accessibilityManager = context.getSystemService(Service.ACCESSIBILITY_SERVICE) as AccessibilityManager
+        ViewCompat.setAccessibilityDelegate(this, accessHelper)
     }
 
     fun setItems(items: Array<Item?>) {
@@ -141,83 +195,19 @@ class ChartView3 : View {
         }
     }
 
-    private lateinit var accessibilityManager: AccessibilityManager
-    private val accessibilityNodeProvider: AccessibilityNodeProviderCompat = VirtualDescendantsProvider(this)
-    private var prevHoveredItem: Item? = null
+    override fun dispatchHoverEvent(event: MotionEvent): Boolean {
+        return accessHelper.dispatchHoverEvent(event) || super.dispatchHoverEvent(event)
+    }
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    override fun getAccessibilityNodeProvider(): AccessibilityNodeProvider {
-        return accessibilityNodeProvider.provider as AccessibilityNodeProvider
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        return accessHelper.dispatchKeyEvent(event) || super.dispatchKeyEvent(event)
+    }
+
+    override fun onFocusChanged(gainFocus: Boolean, direction: Int, previouslyFocusedRect: Rect?) {
+        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect)
+        accessHelper.onFocusChanged(gainFocus, direction, previouslyFocusedRect)
     }
 
     override fun getAccessibilityClassName() = ChartView3::class.java.name
 
-    public override fun dispatchHoverEvent(event: MotionEvent): Boolean {
-        val items = this.items ?: return super.dispatchHoverEvent(event)
-
-        val viewportWidth = width - paddingLeft - paddingRight.toFloat()
-        val itemWidth = viewportWidth / items.size
-        val child = items[max(0, min(floor((event.x - paddingLeft) / itemWidth).toInt(), items.size - 1))]
-        var handled = false
-        val action = event.action
-        when (action) {
-            MotionEvent.ACTION_HOVER_ENTER -> {
-                prevHoveredItem = child
-                handled = handled or onHoverItem(child, event)
-                event.action = action
-            }
-            MotionEvent.ACTION_HOVER_MOVE -> {
-                if (child === prevHoveredItem) {
-                    handled = handled or onHoverItem(child, event)
-                    event.action = action
-                } else {
-                    val eventNoHistory = if (event.historySize > 0) MotionEvent.obtainNoHistory(event) else event
-                    eventNoHistory.action = MotionEvent.ACTION_HOVER_EXIT
-                    onHoverItem(prevHoveredItem!!, eventNoHistory)
-                    eventNoHistory.action = MotionEvent.ACTION_HOVER_ENTER
-                    onHoverItem(child, eventNoHistory)
-                    prevHoveredItem = child
-                    eventNoHistory.action = MotionEvent.ACTION_HOVER_MOVE
-                    handled = handled or onHoverItem(child, eventNoHistory)
-                    if (eventNoHistory != event) {
-                        eventNoHistory.recycle()
-                    } else {
-                        event.action = action
-                    }
-                }
-            }
-            MotionEvent.ACTION_HOVER_EXIT -> {
-                prevHoveredItem = null
-                handled = handled or onHoverItem(child, event)
-                event.action = action
-            }
-        }
-        return handled
-    }
-
-    private fun onHoverItem(virtualView: Item, event: MotionEvent): Boolean {
-        when (event.action) {
-            MotionEvent.ACTION_HOVER_ENTER -> {
-                sendAccessibilityEventForItem(
-                    virtualView,
-                    AccessibilityEventCompat.TYPE_VIEW_ACCESSIBILITY_FOCUSED
-                )
-            }
-            MotionEvent.ACTION_HOVER_EXIT -> {
-            }
-        }
-        return true
-    }
-
-    private fun sendAccessibilityEventForItem(item: Item, eventType: Int) {
-        if (accessibilityManager.isTouchExplorationEnabled) {
-            val event = AccessibilityEvent.obtain(eventType)
-            AccessibilityRecordCompat.setSource(event, this, items!!.indexOf(item))
-            event.packageName = context.packageName
-            event.className = javaClass.name
-            event.text.add(item.name)
-            parent.requestSendAccessibilityEvent(this, event) // send event clears source
-            invalidate()
-        }
-    }
 }
