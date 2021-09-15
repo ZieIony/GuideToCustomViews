@@ -46,7 +46,7 @@ public class FlowLayout3 extends android.widget.FrameLayout {
     private void initFlowLayout(AttributeSet attrs, int defStyleAttr) {
         TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.FlowLayout3, defStyleAttr, 0);
 
-        gravity = a.getInt(R.styleable.FlowLayout_android_gravity, Gravity.START);
+        gravity = a.getInt(R.styleable.FlowLayout3_android_gravity, Gravity.START);
 
         a.recycle();
     }
